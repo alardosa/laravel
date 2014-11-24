@@ -25,5 +25,5 @@ Route::get('about', function() {
 //EXAMPLE 2 - http://localhost/laravel/public/contact
 Route::get('contact', 'PagesController@contact');
 
-//EXAMPLE 3 - 
+//EXAMPLE 3 - http://localhost/laravel/public/users/
 Route::resource('users', 'UsersController');

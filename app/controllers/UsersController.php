@@ -1,6 +1,6 @@
 <?php
 
-class UserController extends \BaseController {
+class UsersController extends \BaseController {
 
     /**
      * Display a listing of the resource.
@@ -9,13 +9,14 @@ class UserController extends \BaseController {
      */
     public function index() {
         //EXAMPLE 3
-        $users = User::get();
-        return $users;
+        //$users = User::get();
+        //return $users;
         
         //EXAMPLE 4
-        //$users = User::get();
-        //return View::make('users.index', compact('users'));
-    }
+        //$users = User::all();
+        $users = User::paginate(5);
+        return View::make('users.index', compact('users'));
+    }   
 
     /**
      * Show the form for creating a new resource.
@@ -24,6 +25,7 @@ class UserController extends \BaseController {
      */
     public function create() {
         //
+        return View::make('users.create');
     }
 
     /**
